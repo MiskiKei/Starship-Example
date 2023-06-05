@@ -40,6 +40,14 @@ public class StarshipGame {
         System.out.println("Updated Remaining Fuel: " + String.format("%.2f", formattedRemFuel));
         
         System.out.println();
+        
+        System.out.print("Enter the new velocity: ");
+        double velocity = scnr.nextDouble();
+        starship.setVelocity(velocity);
+        double formattedVelocity = Math.round(starship.getVelocity() * 100.0) / 100.0;
+        System.out.printf("Velocity: %.2f%n", formattedVelocity);
+        
+        System.out.println();
 
 		System.out.println("All systems in check, we are ready for linked battle!");
 

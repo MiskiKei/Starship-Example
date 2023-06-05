@@ -7,6 +7,7 @@ public class Starship {
 	public int Years = 1999;
 	private double RemFuel = 100;
 	private long Pos = 789012893;
+	private double velocity = 0.0;
 	
 
 	public Starship(String inputMat, int inputYear, double inputRemFuel, long inputPos) { // This is a constructor
@@ -52,4 +53,11 @@ public class Starship {
 		return Pos;
 	}
 
+    public void setVelocity(double inputVelocity) {
+        velocity = inputVelocity;
+    }
+
+    public double getVelocity() {
+        return velocity;
+    }
 } 
