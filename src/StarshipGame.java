@@ -55,6 +55,13 @@ public class StarshipGame {
         System.out.println("Destination: (" + destination[0] + ", " + destination[1] + ")");
         
         System.out.println();
+        
+        System.out.print("Enable auto-pilot? (true/false): ");
+        boolean autoPilot = scnr.nextBoolean();
+        starship.setAutoPilot(autoPilot);
+        System.out.println("Auto-Pilot: " + starship.isAutoPilot());
+        
+        System.out.println();
 
 		System.out.println("All systems in check, we are ready for linked battle!");
 

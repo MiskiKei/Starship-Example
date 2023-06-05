@@ -10,6 +10,7 @@ public class Starship {
 	private double velocity = 0.0;
 	private double destX = 0.0;
 	private double destY = 0.0;
+	private boolean autoPilot = false;
 
 	public Starship(String inputMat, int inputYear, double inputRemFuel, long inputPos) { // This is a constructor
 		Material = inputMat;
@@ -70,4 +71,12 @@ public class Starship {
     public double[] getDestination() {
         return new double[]{destX, destY};
     }
+    
+	public void setAutoPilot(boolean enableAutoPilot) {
+		autoPilot = enableAutoPilot;
+	}
+
+	public boolean isAutoPilot() {
+		return autoPilot;
+	}
 } 
