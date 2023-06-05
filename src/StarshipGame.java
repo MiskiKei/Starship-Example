@@ -29,13 +29,11 @@ public class StarshipGame {
 
 		System.out.println();
 		
-        System.out.print("Enter the new remaining fuel: ");
-        double newFuel = scnr.nextDouble();
         
         System.out.print("Enter the fuel consumption rate: ");
         double consumptionRate = scnr.nextDouble();
         
-        starship.setRemFuel(newFuel, consumptionRate);
+        starship.setRemFuel(fuel, consumptionRate);
         double formattedRemFuel = Math.round(starship.getRemFuel() * 100.0) / 100.0;
         System.out.println("Updated Remaining Fuel: " + String.format("%.2f", formattedRemFuel));
         
@@ -46,6 +44,15 @@ public class StarshipGame {
         starship.setVelocity(velocity);
         double formattedVelocity = Math.round(starship.getVelocity() * 100.0) / 100.0;
         System.out.printf("Velocity: %.2f%n", formattedVelocity);
+        
+        System.out.println();
+        
+        System.out.print("Enter the destination coordinates (x, y): ");
+        double destX = scnr.nextDouble();
+        double destY = scnr.nextDouble();
+        starship.setDestination(destX, destY);
+        double[] destination = starship.getDestination();
+        System.out.println("Destination: (" + destination[0] + ", " + destination[1] + ")");
         
         System.out.println();
 

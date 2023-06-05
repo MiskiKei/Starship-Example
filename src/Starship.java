@@ -8,7 +8,8 @@ public class Starship {
 	private double RemFuel = 100;
 	private long Pos = 789012893;
 	private double velocity = 0.0;
-	
+	private double destX = 0.0;
+	private double destY = 0.0;
 
 	public Starship(String inputMat, int inputYear, double inputRemFuel, long inputPos) { // This is a constructor
 		Material = inputMat;
@@ -59,5 +60,14 @@ public class Starship {
 
     public double getVelocity() {
         return velocity;
+    }
+    
+    public void setDestination(double x, double y) {
+        destX = x;
+        destY = y;
+    }
+
+    public double[] getDestination() {
+        return new double[]{destX, destY};
     }
 } 
