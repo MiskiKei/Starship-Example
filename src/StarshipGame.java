@@ -62,6 +62,19 @@ public class StarshipGame {
         System.out.println("Auto-Pilot: " + starship.isAutoPilot());
         
         System.out.println();
+        
+        System.out.println("Max Fuel Capacity: 10000000");
+        System.out.println("Current Fuel Capacity: " + String.format("%.2f", formattedRemFuel));
+        
+        System.out.println();
+        
+        System.out.print("Enter the amount of fuel to refuel: ");
+        double refuelAmount = scnr.nextDouble();
+        starship.refuel(refuelAmount);
+        System.out.printf("Remaining Fuel after refueling: %.2f\n", starship.getRemFuel());
+
+
+        System.out.println();
 
 		System.out.println("All systems in check, we are ready for linked battle!");
 

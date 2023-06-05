@@ -11,6 +11,7 @@ public class Starship {
 	private double destX = 0.0;
 	private double destY = 0.0;
 	private boolean autoPilot = false;
+	private double MAX_FUEL_CAPACITY = 10000000;
 
 	public Starship(String inputMat, int inputYear, double inputRemFuel, long inputPos) { // This is a constructor
 		Material = inputMat;
@@ -78,5 +79,13 @@ public class Starship {
 
 	public boolean isAutoPilot() {
 		return autoPilot;
+	}
+	
+	public void refuel(double fuelAmount) {
+		if (RemFuel + fuelAmount <= MAX_FUEL_CAPACITY) {
+			RemFuel += fuelAmount;
+		} else {
+			 System.out.println("Cannot refuel. Maximum fuel capacity reached.");
+		}
 	}
 } 
