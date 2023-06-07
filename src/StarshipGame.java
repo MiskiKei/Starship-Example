@@ -73,9 +73,15 @@ public class StarshipGame {
         starship.refuel(refuelAmount);
         System.out.printf("Remaining Fuel after refueling: %.2f\n", starship.getRemFuel());
 
-
         System.out.println();
 
+        System.out.print("Enter the new desired position: ");
+        long newPosition = scnr.nextLong();
+        starship.calculateDistanceToBeTraveled(position,newPosition);
+        double distanceTraveled = starship.getTotalDistanceTraveled();
+        System.out.println("Total distance to be traveled to reach new position: " + distanceTraveled);
+
+        System.out.println();
 		System.out.println("All systems in check, we are ready for linked battle!");
 
 	}

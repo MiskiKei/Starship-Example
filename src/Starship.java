@@ -12,6 +12,7 @@ public class Starship {
 	private double destY = 0.0;
 	private boolean autoPilot = false;
 	private double MAX_FUEL_CAPACITY = 10000000;
+	  private double totalDistanceTraveled = 0;
 
 	public Starship(String inputMat, int inputYear, double inputRemFuel, long inputPos) { // This is a constructor
 		Material = inputMat;
@@ -88,4 +89,14 @@ public class Starship {
 			 System.out.println("Cannot refuel. Maximum fuel capacity reached.");
 		}
 	}
+	
+    public void calculateDistanceToBeTraveled(long intialPosition, long nextPosition) {
+        double distance = Math.abs(nextPosition - intialPosition); 
+        totalDistanceTraveled += distance;
+    }
+
+    public double getTotalDistanceTraveled() {
+        return totalDistanceTraveled;
+    }
+
 } 
