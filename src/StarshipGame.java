@@ -39,7 +39,7 @@ public class StarshipGame {
         
         System.out.println();
         
-        System.out.print("Enter the new velocity: ");
+        System.out.print("Enter the new velocity (m/s): ");
         double velocity = scnr.nextDouble();
         starship.setVelocity(velocity);
         double formattedVelocity = Math.round(starship.getVelocity() * 100.0) / 100.0;
@@ -80,6 +80,13 @@ public class StarshipGame {
         starship.calculateDistanceToBeTraveled(position,newPosition);
         double distanceTraveled = starship.getTotalDistanceTraveled();
         System.out.println("Total distance to be traveled to reach new position: " + distanceTraveled);
+        
+        System.out.println();
+
+        double eta = starship.calculateETA();
+        if (eta != -1) {
+            System.out.println("Estimated Time of Arrival (ETA): " + eta + " hours");
+        }
 
         System.out.println();
 		System.out.println("All systems in check, we are ready for linked battle!");

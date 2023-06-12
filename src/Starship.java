@@ -98,5 +98,15 @@ public class Starship {
     public double getTotalDistanceTraveled() {
         return totalDistanceTraveled;
     }
-
+    public double calculateETA() {
+        if (velocity == 0) {
+            System.out.println("Cannot calculate ETA. Velocity is zero.");
+            return -1;
+        }
+        
+        double distanceToDestination = getTotalDistanceTraveled();
+        double eta = distanceToDestination / velocity;
+        
+        return Math.round(eta * 100.0) / 100.0;
+    }
 } 
